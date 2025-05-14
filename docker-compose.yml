@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  docusaurus:
+    build:
+      context: .
+      target: dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/opt/docusaurus
+      - /opt/docusaurus/node_modules  # Pour éviter les conflits de node_modules
+    environment:
+      - NODE_ENV=development
